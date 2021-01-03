@@ -7,13 +7,13 @@ import Pojo.PlaceInfo;
 
 public class Payload {
 	
-	public static PlaceInfo getPayload(){
+	public static PlaceInfo getPayload(String name, String address, String language){
 	PlaceInfo pi =	new PlaceInfo();
 	pi.setAccuracy("50");
-	pi.setAddress("29, side layout, cohen 09");
-	pi.setName("Frontline house");
+	pi.setAddress(address);
+	pi.setName(name);
 	pi.setWebsite("http://google.com");
-	pi.setLanguage("French-IN");
+	pi.setLanguage(language);
 	Location l = new Location();
 	l.setLat(-38.383494);
 	l.setLng(33.427362);
