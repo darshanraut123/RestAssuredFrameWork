@@ -28,11 +28,14 @@ import Resources.Utils;
 public class StepDefination extends Utils{
 	RequestSpecification actReqSpec;
 	Response res;
-	@Given("add place payload")
-	public void add_place_payload() throws IOException {
-		PlaceInfo pi = Payload.getPayload();
-		actReqSpec = given().spec(getReqSpec()).body(pi);
-	}
+
+		@Given("add place with payload as {string} name {string} address {string} language")
+			public void add_place_payload(String name,String address,String language) throws IOException {
+			PlaceInfo pi = Payload.getPayload(name,address,language);
+			actReqSpec = given().spec(getReqSpec()).body(pi);
+		}
+
+
 
 	@When("user calls {string} with post http request")
 	public void user_calls_with_post_http_request(String string) {
